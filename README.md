@@ -1,15 +1,6 @@
-# 🚀 Welcome to your new awesome project!
+# 🚀 MEDIA QUERY!
+### In this repositoty you'll find different projects on each branch:
 
-This project has been created using **webpack-cli**, you can now run
-
-```
-npm run build
-```
-
-or
-
-```
-yarn build
-```
-
-to bundle your application
+- 🌿 introduction : a simple introduction to media queries with a plain widget.
+- 🌿
+- 🌿

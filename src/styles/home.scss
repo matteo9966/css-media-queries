@@ -1,17 +1,102 @@
+* {
+  margin: 0px 5px;
 
-  *{
-    margin : 0px;
-    padding : 0px;
-    box-sizing : border-box; 
-  
-    body{
-      font-size : 16px;
-      font-family : sans-serif;
+  padding: 0px;
+  box-sizing: border-box;
+
+  body {
+    font-family: sans-serif;
+  }
+}
+
+.header {
+  height: 10%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  &__logo {
+    font-size: 4vw;
+  }
+
+  &__menu {
+    display: flex;
+    font-size: 2.5vw;
+
+    gap: 15px;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+
+  border: 2px solid black;
+  height: 80%;
+
+  &__image {
+    background-image: url("../images/Portrait.png");
+
+    width: 50%;
+
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    background-position: left center;
+  }
+
+  &__text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    &-1 {
+      font-size: 10vw;
+    }
+
+    &-2,
+    &-3,
+    &-4 {
+      font-size: 5vw;
     }
   }
 
-
-
-  .container{
-    height : 100vh;
+  span {
+    color: red;
   }
+}
+
+.footer {
+  [class^="footer__"] {
+    img {
+      width: 5.3vw;
+    }
+  }
+
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 20px;
+
+  margin-right: 10%;
+}
+
+.container {
+  height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+}

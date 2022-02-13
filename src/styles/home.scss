@@ -1,17 +1,104 @@
+@use 'sass:math';
 
-  *{
-    margin : 0px;
-    padding : 0px;
-    box-sizing : border-box; 
+@mixin random-bgr(){
+  background: rgb(random(255), random(255), random(255));
+}
+
+
+@mixin randomColor {
+
+  @for $i from 1 to 4 {
+    & div:nth-child(#{$i}){
+       
+         @for $j from 1 to 4{
+            & div:nth-child(#{$j}){
+              @include random-bgr();
+            }  
+
+         }
+
+
+    }
+  }
   
-    body{
-      font-size : 16px;
-      font-family : sans-serif;
+}
+
+
+* {
+  margin: 0px;
+  padding: 0px 10px;
+  box-sizing: border-box;
+
+  body {
+    font-family: sans-serif;
+    font-size: 55px;
+  }
+}
+
+.sizeWidget{
+  right:10%;
+  top:2%;
+  padding:0.2rem;
+  position:absolute;
+  min-width: 10vw;
+  min-height:5vh;
+  font-size: max(2vw,0.7rem);
+  border:3px solid burlywood;
+  border-radius: 5%;
+   * {
+    font-size: max(2vw,0.7rem);
+  }
+  span{
+      width: 100%;
+      display: block;
+      margin-top: 1rem;
+      padding:0.15rem;
+  }
+
+}
+
+[class ^="row-"]{ // ^ means  starts with row-
+  display: flex;
+  flex-direction: row;
+
+  gap : 30px;
+}
+
+[class ^="box-"]{
+
+  background-color: #c4c4c4;
+  border: 2px solid black;
+
+// Defining the size of the boxes 
+  width : (100%)/3;
+  height: (100vh)/3;
+  border-radius: 10px;
+// Place letter at the center
+  display: grid;
+  place-items: center;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+// Creating gap between rows 
+  gap: 30px;
+
+  @include randomColor;
+}
+
+@media (max-width: 650px){
+
+  //Change orientation
+    [class ^="row-"]{
+      flex-direction: column;
+    }
+  
+  // Change width of boxes
+    [class ^="box-"]{
+      width: 100%;
     }
   }
 
-
-
-  .container{
-    height : 100vh;
-  }

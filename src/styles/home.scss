@@ -34,7 +34,7 @@
   display: flex;
   flex-direction: row;
 
-  border: 2px solid black;
+ 
   height: 80%;
 
   &__image {
@@ -99,4 +99,65 @@
   display: flex;
 
   flex-direction: column;
+}
+
+@media (max-width: 650px) {
+
+  .header {
+
+// To place logo at center
+    justify-content: center;
+
+    &__logo {
+      font-size: 40px;
+    }
+//hiding the menu on mobile device
+    &__menu {
+      display: none;
+    }
+  }
+
+  .main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__image {
+      // Image size 
+            height: 200px;
+            width: 200px;
+            background-size: 100%;
+      
+      // To have rounded image 
+            border-radius: 100%;
+            background-position: center;
+          }
+      
+      // Styles for the text ->
+          &__text {
+            width: 100%;
+      
+            &-1 {
+              display: none;
+            }
+            &-2, &-3, &-4 {
+              font-size: 30px;
+            }
+          }
+}
+
+.footer {
+  // placing icons along the X-axis
+      justify-content: center;
+      margin: 0px;
+  
+      [class^="footer__"] {
+  
+  // Resizing images for mobile layout
+        img {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+
 }
